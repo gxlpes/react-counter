@@ -1,7 +1,6 @@
 const Increase = (props) => {
-  const increaseHandler = () => {};
-
-  return <button onClick={increaseHandler}>+</button>;
+  const { onIncrease } = props;
+  return <button onClick={() => onIncrease()}>+</button>;
 };
 
 export default Increase;

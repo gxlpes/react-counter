@@ -1,21 +1,17 @@
-import Decrease from "./components/Decrease";
 import Increase from "./components/Increase";
-import Reset from "./components/Reset";
 import { useState } from "react";
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState("0");
-
+export default function App() {
+  const [count, setCount] = useState(0);
+  const increaseHandler = () => {
+    setCount(count + 1);
+  };
   return (
     <div>
       <p>Counter</p>
       <p>{count}</p>
-      <Increase />
-      <Decrease />
-      <Reset />
+      <Increase onIncrease={increaseHandler} />
     </div>
   );
 }
-
-export default App;
