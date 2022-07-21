@@ -16,7 +16,7 @@ export default function App() {
   };
 
   const resetHandler = () => {
-    setCount("0");
+    setCount(0);
   };
 
   return (
