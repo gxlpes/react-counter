@@ -1,14 +1,6 @@
 const Reset = (props) => {
-  const { onReset } = props;
-  return (
-    <button
-      onClick={() => {
-        onReset();
-      }}
-    >
-      Reset
-    </button>
-  );
+  const onResetFunction = props.onReset;
+  return <button onClick={onResetFunction}>Reset</button>;
 };
 
 export default Reset;

@@ -1,6 +1,6 @@
 const Decrease = (props) => {
-  const { onDecrease } = props;
-  return <button onClick={() => onDecrease()}>-</button>;
+  const onDecreaseFunction = props.onDecrease;
+  return <button onClick={onDecreaseFunction}>-</button>;
 };
 
 export default Decrease;

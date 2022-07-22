@@ -1,6 +1,7 @@
 const Increase = (props) => {
-  const { onIncrease } = props;
-  return <button onClick={() => onIncrease()}>+</button>;
+  const onIncreaseFunction = props.onIncrease;
+
+  return <button onClick={onIncreaseFunction}>+</button>;
 };
 
 export default Increase;
