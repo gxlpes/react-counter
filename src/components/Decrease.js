@@ -1,8 +1,4 @@
-import styled from "styled-components";
-
-const StyledButtonDecrease = styled.button`
-  background: red;
-`;
+import { StyledButtonDecrease } from "../styles/StyleDecrease";
 
 const Decrease = (props) => {
   const onDecreaseFunction = props.onDecrease;

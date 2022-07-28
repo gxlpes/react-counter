@@ -2,19 +2,20 @@ import Increase from "./components/Increase";
 import Decrease from "./components/Decrease";
 import Reset from "./components/Reset";
 
+import { ContainerButtons } from "./styles/ContainerButtons";
+import { ContainerCounter } from "./styles/ContainerCounter";
+
 import { useState } from "react";
 import styled from "styled-components";
 
-const ContStyled = styled.div`
+const ContainerBody = styled.div`
   font-family: "Poppins", sans-serif;
   letter-spacing: -0.05rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const BasicButton = styled.button`
-  background-color: red;
+  justify-content: center;
+  height: 90vh;
 `;
 
 const App = () => {
@@ -33,13 +34,17 @@ const App = () => {
   };
 
   return (
-    <ContStyled>
-      <p>React Counter</p>
-      <p>{count}</p>
-      <Increase onIncrease={increaseHandler} />
-      <Decrease onDecrease={decreaseHandler} />
-      <Reset onReset={resetHandler} />
-    </ContStyled>
+    <ContainerBody>
+      <ContainerCounter>
+        <p>React Counter</p>
+        <p>{count}</p>
+        <ContainerButtons>
+          <Increase onIncrease={increaseHandler} />
+          <Decrease onDecrease={decreaseHandler} />
+          <Reset onReset={resetHandler} />
+        </ContainerButtons>
+      </ContainerCounter>
+    </ContainerBody>
   );
 };
 
