@@ -3,9 +3,21 @@ import Decrease from "./components/Decrease";
 import Reset from "./components/Reset";
 
 import { useState } from "react";
-import "./App.css";
+import styled from "styled-components";
 
-export default function App() {
+const ContStyled = styled.div`
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.05rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const BasicButton = styled.button`
+  background-color: red;
+`;
+
+const App = () => {
   const [count, setCount] = useState(0);
 
   const increaseHandler = () => {
@@ -21,12 +33,14 @@ export default function App() {
   };
 
   return (
-    <div>
-      <p>Counter</p>
+    <ContStyled>
+      <p>React Counter</p>
       <p>{count}</p>
       <Increase onIncrease={increaseHandler} />
       <Decrease onDecrease={decreaseHandler} />
       <Reset onReset={resetHandler} />
-    </div>
+    </ContStyled>
   );
-}
+};
+
+export default App;

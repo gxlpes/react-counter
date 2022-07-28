@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const StyledButtonIncrease = styled.button`
-  background: green;
-  height: 2rem;
-  width: 2rem;
+const StyledButtonIncrease = styled(props.BasicButton)`
+  padding: 2rem;
+  border: none;
+  border-radius: 7px;
 `;
 
 const Increase = (props) => {
