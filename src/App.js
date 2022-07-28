@@ -22,11 +22,11 @@ const App = () => {
   const [count, setCount] = useState(0);
 
   const increaseHandler = () => {
-    setCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
   };
 
   const decreaseHandler = () => {
-    setCount(count - 1);
+    setCount((prevCount) => prevCount - 1);
   };
 
   const resetHandler = () => {
