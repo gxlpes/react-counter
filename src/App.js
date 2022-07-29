@@ -8,17 +8,24 @@ import { ContainerCounter } from "./styles/ContainerCounter";
 import { useState } from "react";
 import styled from "styled-components";
 
-const ContainerBody = styled.div`
-  font-family: "Poppins", sans-serif;
-  letter-spacing: -0.05rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
-`;
-
 const App = () => {
+  const [background, setBackground] = useState("white");
+
+  const ContainerBody = styled.div`
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -0.05rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    background-color: ${background};
+  `;
+
+  const setStyle = (background) => {
+    setBackground(background);
+  };
+
   const [count, setCount] = useState(0);
 
   const increaseHandler = () => {
@@ -39,7 +46,7 @@ const App = () => {
         <p>React Counter</p>
         <p>{count}</p>
         <ContainerButtons>
-          <Increase onIncrease={increaseHandler} />
+          <Increase onIncrease={increaseHandler} onClick={() => setStyle("green")} />
           <Decrease onDecrease={decreaseHandler} />
           <Reset onReset={resetHandler} />
         </ContainerButtons>
