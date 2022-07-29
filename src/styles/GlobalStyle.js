@@ -6,6 +6,16 @@ export const ButtonDefault = styled.button`
   border-radius: 7px;
   padding: 1rem 2rem;
   border: none;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  &:active {
+    transform: scale(1.2);
+  }
 
   @media screen and (max-width: 786px) {
     padding: 1rem 1.5rem;

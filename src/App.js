@@ -11,6 +11,10 @@ import styled from "styled-components";
 const App = () => {
   const [background, setBackground] = useState("white");
 
+  const setStyle = (background) => {
+    setBackground(background);
+  };
+
   const ContainerBody = styled.div`
     font-family: "Poppins", sans-serif;
     letter-spacing: -0.05rem;
@@ -19,12 +23,8 @@ const App = () => {
     align-items: center;
     justify-content: center;
     height: 90vh;
-    background-color: ${background};
+    background: ${background};
   `;
-
-  const setStyle = (background) => {
-    setBackground(background);
-  };
 
   const [count, setCount] = useState(0);
 
@@ -43,10 +43,12 @@ const App = () => {
   return (
     <ContainerBody>
       <ContainerCounter>
-        <p>React Counter</p>
+        <p>
+          <b>React Counter</b>
+        </p>
         <p>{count}</p>
         <ContainerButtons>
-          <Increase onIncrease={increaseHandler} onClick={() => setStyle("green")} />
+          <Increase onMouseEnter={() => setStyle("#4a4a4a")} onIncrease={increaseHandler} />
           <Decrease onDecrease={decreaseHandler} />
           <Reset onReset={resetHandler} />
         </ContainerButtons>
