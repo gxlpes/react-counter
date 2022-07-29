@@ -6,4 +6,8 @@ export const ButtonDefault = styled.button`
   border-radius: 7px;
   padding: 1rem 2rem;
   border: none;
+
+  @media screen and (max-width: 786px) {
+    padding: 1rem 1.5rem;
+  }
 `;
